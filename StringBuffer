@@ -15,7 +15,9 @@ public class StringBUffer {
        s.delete(1,5);
        s.reverse();
      //  System.out.println(s);
-       
+     // to remove white spaces
+     String k = "kkk  pp  ppp ll ";
+       System.out.println(k.replaceAll(" ",""));
         
     }
 
