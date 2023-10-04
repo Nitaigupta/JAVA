@@ -1,0 +1,23 @@
+public class StringBUffer {
+    public static void main(String[] args) {
+        //constructor 1
+        StringBuffer s = new StringBuffer();
+        // to check StringBUlider CApacity
+       System.out.println(s.capacity());
+       //constructor 2
+       StringBuffer s1 = new StringBuffer("Helllo"); 
+       //constructor 3
+       StringBuffer s2 = new StringBuffer(30);
+       s.append("Hello");
+       s.append("Duniya");
+       s.insert(2,"Rahul");
+       s.replace(1,5,"Nitai");  
+       s.delete(1,5);
+       s.reverse();
+     //  System.out.println(s);
+       
+        
+    }
+
+    
+}
