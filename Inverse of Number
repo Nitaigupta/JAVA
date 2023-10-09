@@ -1,0 +1,18 @@
+import java.util.Arrays;
+
+public class Inverse {
+    public static void main(String[] args) {
+        int n = 41523;
+        String s = String.valueOf(n);
+        int j = s.length();
+        int i =1;
+        int arr[] = new int[j];
+        while (n!=0) {
+            int r = n%10;
+            arr[j-r]=i;
+            n=n/10;
+            i++;
+        }
+        System.out.println(Arrays.toString(arr));
+    }
+}
