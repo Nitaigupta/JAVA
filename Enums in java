@@ -1,0 +1,16 @@
+public class Enums {
+    enum week{
+        monday, tuesday , wednesday , thursday , friday , saturday , sunday
+        // these  are enums constant 
+        // public , static , final
+        // since its final u can create child enums
+        // type week
+        
+
+    }
+    public static void main(String[] args) {
+        for (week days : week.values()) {
+            System.out.println(days);            
+        }
+    }
+}
