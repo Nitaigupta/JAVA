@@ -1,0 +1,162 @@
+public class Recursion1 {
+    public static void main(String[] args) {
+        System.out.println(recursivePalindrome("moml",0,3));
+       
+
+
+        
+    }
+    // function to print first five number
+    static void print(int num){
+       if(num==6){
+        return;
+
+       }
+       System.out.println(num);
+       print(num+1);
+        
+    } 
+    static int fibonacci(int n){
+        if(n<2){
+            return n;
+        }
+        return fibonacci(n-1)+fibonacci(n-2);
+    }
+    static int binarysearch(int arr[],int target , int s , int e){
+        if(s<e){
+            return -1;
+        }
+        int m = s+(e-s)/2;
+        if (arr[m] == target) {
+            return m;
+        }
+        if(arr[m]>target){
+            return binarysearch(arr, target,  s, m-1);
+        }
+        else{
+            return binarysearch(arr, target, m+1, e);
+        }
+       
+    }
+    static void printingNumber(int n){
+        if (n==1) {
+           System.out.println(1);
+            return;
+        }
+        System.out.println(n);
+        printingNumber(n-1);
+
+    }
+    static void printingNumber2(int n){
+        if(n==0){
+            return;
+        }
+        printingNumber2(n-1);
+        System.out.println(n);
+       
+
+    }
+     static void printingNumberboth(int n){
+        if(n==0){
+            return;
+        }
+        System.out.println(n);
+        printingNumberboth(n-1);
+        System.out.println(n);
+
+       
+
+    }
+    static int factorial(int n){
+        if (n==1) {
+            return 1;
+        }
+        return n*factorial(n-1);
+    }
+    static int sumofNum(int n){
+        if (n==1) {
+            return 1;
+        }
+        return n+sumofNum(n-1);
+    }
+    static int sumofDigit(int n){
+      
+        if (n==0) {
+            return 0;
+        }
+        return sumofDigit(n/10)+(n%10);
+        
+        
+    }
+    static int productofDigit(int n){
+      
+        if (n%10==n) {
+            return n;
+        }
+        return productofDigit(n/10)*(n%10);
+        
+        
+    }
+   static int sum =0;
+    static void reverseNum(int n){
+ 
+        if (n==0) {
+            return;
+        }
+        int rem = n%10;
+        sum = sum*10+rem;
+        reverseNum(n/10);
+    }
+    static int reverseNum2(int n){
+
+        int digit = (int)(Math.log10(n)+1);
+        return helper(n,digit);
+    }
+    private static int helper(int n, int digit) {
+        if (n%10==n) {
+            return n;
+        }
+        int rem = n%10;
+        return rem*(int)(Math.pow(10, digit-1)+helper(n/10, digit-1));
+    }
+    static int count(int n){
+        return Countzeros(n, 0);
+    }
+
+    static int Countzeros(int n , int count){
+        if (n==0) {
+            return count;
+        }
+     int rem = n%10;
+     if (rem==0) {
+        Countzeros(n/10, count++);
+     }
+     return Countzeros(n/10, count);
+
+
+        
+    }
+    static void IntegertoBinary(int n){
+        if(n==0){
+            return;
+        }
+        IntegertoBinary(n/2);
+        System.out.println(n%2);
+    }
+    // tail recursive code factorial..
+    static int tailfactorial(int n , int k){
+        if (n==1 || n==0) {
+            return k;
+            
+        }
+        return tailfactorial(n-1 , n*k);
+    }
+    static boolean recursivePalindrome(String s , int start , int end){
+        if (start>=end) {
+            return true;
+        }
+        return (s.charAt(start)==s.charAt(end) && recursivePalindrome(s, start+1 , end-1));
+
+    }
+    
+}
